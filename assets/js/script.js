@@ -30,40 +30,6 @@ function surpriseFact(event) {
   location.assign("search-results.html");
 }
 
-factBtn.click(getFact);
-
-var recentSearches = [];
-
-function renderSearches() {
-  for (var i = 0; i < recentSearches.length; i++) {
-    var recentSearch = recentSearches[i];
-    var li = document.createElement("li");
-    li.textContent = recentSearches;
-    li.setAttribute("data-index", i);
-
-    recentSearches.appendChild(li);
-  }
-}
-
-function init() {
-  var storedSearches = JSon.parse(localStorage.getItem ("recentSearches"));
-  
-}
-
-var recentSearches = [];
-
-function renderSearches() {
-  for (var i = 0; i < recentSearches.length; i++) {
-    var recentSearch = recentSearches[i];
-    var li = document.createElement("li");
-    li.textContent = recentSearches;
-    li.setAttribute("data-index", i);
-
-    recentSearches.appendChild(li);
-  }
-}
-
-function init() {
-  var storedSearches = JSon.parse(localStorage.getItem ("recentSearches"));
-  
-}
+factBtn.on("submit", getFact);
+dailyBtn.on("submit", dailyFact);
+randomBtn.on("click", surpriseFact);
