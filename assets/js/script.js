@@ -9,17 +9,17 @@ function getFact(event) {
 
   if (!searchInputVal) return;
 
-  var updatedURL = baseURL + "?q=" + searchInputVal;
+  var updatedURL = baseURL + "?q=" + searchInputVal + "&daily=false";
   location.assign(updatedURL);
 }
 
 function dailyFact(event) {
   event.preventDefault();
-  var searchInputVal = $("#daily-input").val();
+  var dailyInputVal = $("#daily-input").val();
 
-  if (!searchInputVal) return;
+  if (!dailyInputVal) return;
 
-  var updatedURL = baseURL + "?q=" + searchInputVal + "&daily=true";
+  var updatedURL = baseURL + "?q=" + dailyInputVal + "&daily=true";
 
   location.assign(updatedURL);
 }
@@ -27,9 +27,44 @@ function dailyFact(event) {
 function surpriseFact(event) {
   event.preventDefault();
 
-  location.assign("search-results.html");
+  var randomInput = randomWords[Math.floor(randomWords.length * Math.random())];
+
+  console.log(randomInput);
+
+  var updatedURL = baseURL + "?q=" + randomInput + "&daily=false";
+
+  location.assign(updatedURL);
 }
 
 factBtn.on("submit", getFact);
 dailyBtn.on("submit", dailyFact);
 randomBtn.on("click", surpriseFact);
+
+var randomWords = [
+  "Apple",
+  "Book",
+  "Candy",
+  "Dolphin",
+  "Echo",
+  "Fireworks",
+  "Golf",
+  "Hotel",
+  "Igloo",
+  "Juliett",
+  "Kite",
+  "Language",
+  "Mountain",
+  "Number",
+  "Orange",
+  "Parasol",
+  "Question",
+  "Romeo",
+  "Salad",
+  "Table",
+  "Uniform",
+  "Victory",
+  "Water",
+  "X-ray",
+  "Yummy",
+  "Zebra",
+];
