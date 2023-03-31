@@ -4,35 +4,43 @@ var factText = $("#fact");
 
 let gif = $("#content").children("img");
 let gifSearch = "http://api.giphy.com/v1/gifs/search"
-let gifTranslate = "http://api.giphy.com/v1/gifs/translate"
+let gifTrending = "http://api.giphy.com/v1/gifs/trending"
+let gifUrl = ""
 let linkToGif = ""
+
+let trendingParams = {
+  offset: 0,
+  apiKey: "vnyyyr1M9Ye4oNnTikmlRcD22yX1SnYZ",
+  apiBackup: "7TGNfg5rsSaLDQHtArlclVZcQiRLmsFp"
+}
 
 let searchParams = {
   q: "test",
-  limit: "1",
-  lang: "en",
-  rating: "pg",
-  offset: "0", //this should be randomized from 0 - to something like 25 to keep it showing different images
+  offset: "0",
   apiKey: "vnyyyr1M9Ye4oNnTikmlRcD22yX1SnYZ",
   apiBackup: "7TGNfg5rsSaLDQHtArlclVZcQiRLmsFp"
 }
 
-let translateParams = {
-  string: "test",
-  weirdness: "10", //scale from 0 - 10
-  apiKey: "vnyyyr1M9Ye4oNnTikmlRcD22yX1SnYZ",
-  apiBackup: "7TGNfg5rsSaLDQHtArlclVZcQiRLmsFp"
-}
 
 // function sends a fetch request to get the gif image and display the link
 const getGif = function () {
   //gets user query from url and builds the api parameters for the gif api
   let queryString = document.location.href
-  queryString = queryString.split("=")[1].split("&")[0]
-  searchParams.q = queryString
-  gifSearch = gifSearch + "?api_key=" + searchParams.apiKey + "&q=" + searchParams.q + "&limit=1&lang=eng&rating=pg&offset=0&"
+  queryString = queryString.split("=")[1].split("&")[0]  //get q value from url
+  //conditional statement to use the gif api with trending or search endpoints
+  if (queryString === "surprise") {
+    //use the trending endpoint
+    trendingParams.offset = Math.floor(100 * Math.random()) //randomize result index
+    gifUrl = gifTrending + "?api_key=" + trendingParams.apiKey + "&limit=1&offset=" + trendingParams.offset + "&rating=pg"
+    console.log("surprise me - execute trending api instead of search api")
+  } else {
+    // use the search endpoint
+    searchParams.offset = Math.floor(100 * Math.random()) //randomize result index
+    searchParams.q = queryString
+    gifUrl = gifSearch + "?api_key=" + searchParams.apiKey + "&q=" + searchParams.q + "&limit=1&lang=eng&rating=pg&offset=" + searchParams.offset
+  }
   //fetch request using the gif api url assembled above
-  fetch(gifSearch)
+  fetch(gifUrl)
     .then(function (response) {
       response.json()
         .then(function (data) {
@@ -41,7 +49,6 @@ const getGif = function () {
           let link = document.createElement("p")
           document.querySelector("#content").appendChild(link)
           link.innerText = linkToGif
-          console.log(linkToGif)
         })
     })
 }
