@@ -14,26 +14,44 @@
 
 <body>
     <header class="top-bar">
-        <h1>Random Fun Facts</h1>
+        <h1 class="text-center">Random Fun Facts</h1>
     </header>
     <div class="grid-x">
         <section class="callout secondary small-3">
-            <h2>Fact of the Day</h2>
-            <button id="daily-button" class="button primary">
-                Get fact of the day
-            </button>
+            <h2 class="text-center">Fact of the Day</h2>
+            <p class="text-center">
+                Enter what kind of image you would like to accompany your fact of the
+                day
+            </p>
+            <form id="daily-button">
+                <input type="text" id="daily-input" placeholder="Search for an Image" />
+                <button class="button primary expanded align-self-bottom">
+                    Get the Fact of the Day
+                </button>
+            </form>
         </section>
 
         <section class="callout primary small-6">
-            <h2>Search for an image and fact will be provided to go with it!</h2>
-            <h3>Enter an image topic</h3>
-            <textarea></textarea>
-            <button id="search-button" class="button primary">Get a fact</button>
+            <h2 class="text-center">Random (but useless) Facts!</h2>
+            <p class="text-center">
+                Enter what kind of image you would like with your random fact
+            </p>
+            <form id="search-button">
+                <input type="text" id="search-input" placeholder="Search for an Image" />
+                <button class="button expanded primary">Get your random fact!</button>
+            </form>
         </section>
 
         <section class="callout secondary small-3">
-            <h2>Surprise Me!</h2>
-            <button id="random-button" class="button primary">Surprise fact</button>
+            <div class="">
+                <h2 class="text-center">Surprise Me!</h2>
+                <p class="text-center">
+                    Not sure what kind of image you would like? Let RNG decide for you!
+                </p>
+                <button id="random-button" class="button success expanded">
+                    Surprise!
+                </button>
+            </div>
         </section>
     </div>
 </body>
