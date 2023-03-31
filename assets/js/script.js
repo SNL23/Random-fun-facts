@@ -31,7 +31,8 @@ function surpriseFact(event) {
 
   console.log(randomInput);
 
-  var updatedURL = baseURL + "?q=" + randomInput + "&daily=false";
+  var updatedURL = baseURL + "?q=surprise&daily=false";
+  // var updatedURL = baseURL + "?q=" + randomInput + "&daily=false";
 
   location.assign(updatedURL);
 }
