@@ -26,13 +26,16 @@ let translateParams = {
 
 // function sends a fetch request to get the gif image and display the link
 const getGif = function () {
-  //builds the api parameters for the gif api
+  //gets user query from url and builds the api parameters for the gif api
+  let queryString = document.location.href
+  queryString = queryString.split("=")[1].split("&")[0]
+  searchParams.q = queryString
   gifSearch = gifSearch + "?api_key=" + searchParams.apiKey + "&q=" + searchParams.q + "&limit=1&lang=eng&rating=pg&offset=0&"
+  //fetch request using the gif api url assembled above
   fetch(gifSearch)
     .then(function (response) {
       response.json()
         .then(function (data) {
-
           //pull the gif url from the data and append to the content section
           linkToGif = data.data[0].url
           let link = document.createElement("p")
@@ -66,12 +69,12 @@ function renderSearches() {
     li.textContent = recentSearch;
     li.setAttribute("data-index", i);
 
-    search-list.appendChild(li);
+    search - list.appendChild(li);
   }
 }
 
 function init() {
-  var storedSearches = JSon.parse(localStorage.getItem ("recentSearches"));
+  var storedSearches = JSon.parse(localStorage.getItem("recentSearches"));
 
   renderSearches();
 }
