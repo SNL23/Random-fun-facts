@@ -10,59 +10,62 @@
   </head>
 
   <body>
-    <header class="top-bar">
-      <div class="grid-container">
-        <h1>Random Fun Facts</h1>
+    <header class="card">
+      <div class="card-header-title is-centered">
+        <h1 class="title is-1">Random Fun Facts</h1>
       </div>
     </header>
-    <div class="">
-      <div class="grid-x">
-        <section class="callout large secondary medium-12 large-3">
-          <h2 class="text-center">Fact of the Day</h2>
-          <p class="text-center">
-            Enter what kind of image you would like to accompany your fact of
-            the day
-          </p>
-          <form id="daily-button">
-            <input
-              type="text"
-              id="daily-input"
-              placeholder="Search for an Image"
-            />
-            <button class="button primary expanded align-self-bottom">
-              Get the Fact of the Day
-            </button>
-          </form>
+    <div class="container">
+      <div class="columns is-vcentered ex-maxheight">
+        <section class="column is-one-quarter">
+          <div class="notification is-info is-light ex-bigbox">
+            <h2 class="block title">Fact of the Day</h2>
+            <p class="block">
+              Enter what kind of image you would like to accompany your fact of
+              the day
+            </p>
+            <form id="daily-button" class="block">
+              <input
+                class="input"
+                type="text"
+                id="daily-input"
+                placeholder="Search for an Image"
+              />
+              <button class="button is-info is-fullwidth">
+                Get the Fact of the Day
+              </button>
+            </form>
+          </div>
         </section>
 
-        <section class="callout large primary medium-12 large-6">
-          <h2 class="text-center">Random (but useless) Facts!</h2>
-          <p class="text-center">
-            Enter what kind of image you would like with your random fact
-          </p>
-          <form id="search-button">
-            <input
-              type="text"
-              id="search-input"
-              placeholder="Search for an Image"
-            />
-            <button class="button expanded primary">
-              Get your random fact!
-            </button>
-          </form>
+        <section class="column is-one-half">
+          <div class="notification is-link is-light ex-bigbox">
+            <h2 class="block title">Random (but useless) Facts!</h2>
+            <p class="block">
+              Enter what kind of image you would like with your random fact
+            </p>
+            <form id="search-button">
+              <input
+                class="input"
+                type="text"
+                id="search-input"
+                placeholder="Search for an Image"
+              />
+              <button class="button is-link is-fullwidth">
+                Get your random fact!
+              </button>
+            </form>
+          </div>
         </section>
 
-        <section class="callout large secondary medium-12 large-3">
-          <div class="">
-            <h2 class="text-center">Surprise Me!</h2>
-            <p class="text-center">
+        <section class="column is-one-quarter">
+          <div class="notification is-primary is-light ex-bigbox">
+            <h2 class="block title">Surprise Me!</h2>
+            <p class="block">
               Not sure what kind of image you would like? Let RNG decide for
               you!
             </p>
-            <button
-              id="random-button"
-              class="button success expanded white-text"
-            >
+            <button id="random-button" class="button is-primary is-fullwidth">
               Surprise!
             </button>
           </div>
