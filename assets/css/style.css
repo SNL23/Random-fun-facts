@@ -15,6 +15,10 @@ img {
   width: 15vw;
 }
 
+a:hover {
+  cursor: grab;
+}
+
 
 @media (max-width: 1000px) {
   img {
