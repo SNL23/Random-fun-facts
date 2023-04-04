@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random Fun Facts</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/bulma.css" />
-  </head>
 
-  <body>
-    <header id="header" class="card columns">
-      <div class="column is-one-fifth">
-        <h1 class="subtitle">Get a new fact of the day</h1>
-      </div>
-      <div class="column is-four-fifths">
-        <form id="search-button">
-          <div class="field has-addons">
-            <input
-              class="input"
-              type="text"
-              id="search-input"
-              placeholder="Search for an Image"
-            />
-            <div>
-              <button class="button is-link">Get another random fact!</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </header>
-    <div class="columns">
-      <section id="sidebar" class="column is-one-fifth block">
-        <div class="box ex-bigbox">
-          <h3 class="title is-4">Search Results</h3>
-        </div>
-      </section>
-      <main class="column is-four-fifths block">
-        <div id="content" class="box ex-bigbox">
-          <img src="" alt="" />
-          <p id="fact"></p>
-        </div>
-      </main>
+<body>
+  <header id="header" class="card columns">
+    <div class="column is-one-fifth">
+      <h1 class="subtitle">Get a new fact of the day</h1>
     </div>
-  </body>
+    <div class="column is-four-fifths">
+      <form id="search-button">
+        <div class="field has-addons">
+          <input class="input" type="text" id="search-input" placeholder="Search for an Image" />
+          <div>
+            <button class="button is-link">Get another random fact!</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </header>
+  <div class="columns">
+    <section id="sidebar" class="column is-one-fifth block">
+      <div class="box ex-bigbox">
+        <h3 class="title is-4">Search Results</h3>
+      </div>
+    </section>
+    <main class="column is-four-fifths block">
+      <div id="content" class="box ex-bigbox">
+        <img src="" alt="" />
+        <p id="fact"></p>
+      </div>
+    </main>
+  </div>
+</body>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="./assets/js/search-results.js"></script>
-  <script src="./assets/js/chris.js"></script>
-  <script src="./assets/js/brent.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="./assets/js/search-results.js"></script>
+<script src="./assets/js/chris.js"></script>
+<script src="./assets/js/brent.js"></script>
+
 </html>
