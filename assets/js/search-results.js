@@ -2,53 +2,25 @@ var testUrl = "https://uselessfacts.jsph.pl/api/v2/facts/random";
 
 var factText = $("#fact");
 
-let gif = $("#content").children("img");
-let gifSearch = "http://api.giphy.com/v1/gifs/search"
-let gifTrending = "http://api.giphy.com/v1/gifs/trending"
-let gifUrl = ""
-let linkToGif = ""
-
-let trendingParams = {
-  offset: 0,
-  apiKey: "vnyyyr1M9Ye4oNnTikmlRcD22yX1SnYZ",
-  apiBackup: "7TGNfg5rsSaLDQHtArlclVZcQiRLmsFp"
-}
-
-let searchParams = {
-  q: "test",
-  offset: "0",
-  apiKey: "vnyyyr1M9Ye4oNnTikmlRcD22yX1SnYZ",
-  apiBackup: "7TGNfg5rsSaLDQHtArlclVZcQiRLmsFp"
-}
-
+let urlPt1 = "http://shibe.online/api/"
+let urlPt2 = "?count=1&urls=true&httpsUrls=true"
+let dogUrl = ""
 
 // function sends a fetch request to get the gif image and display the link
 const getGif = function () {
-  //gets user query from url and builds the api parameters for the gif api
+  // gets user query from url and builds the api parameters for the shibe api
   let queryString = document.location.href
-  queryString = queryString.split("=")[1].split("&")[0]  //get q value from url
-  //conditional statement to use the gif api with trending or search endpoints
-  if (queryString === "surprise") {
-    //use the trending endpoint
-    trendingParams.offset = Math.floor(100 * Math.random()) //randomize result index
-    gifUrl = gifTrending + "?api_key=" + trendingParams.apiKey + "&limit=1&offset=" + trendingParams.offset + "&rating=pg"
-    console.log("surprise me - execute trending api instead of search api")
-  } else {
-    // use the search endpoint
-    searchParams.offset = Math.floor(100 * Math.random()) //randomize result index
-    searchParams.q = queryString
-    gifUrl = gifSearch + "?api_key=" + searchParams.apiKey + "&q=" + searchParams.q + "&limit=1&lang=eng&rating=pg&offset=" + searchParams.offset
-  }
+  queryString = queryString.split("=")[1]  //get q value from url
+  dogUrl = urlPt1 + queryString + urlPt2
   //fetch request using the gif api url assembled above
   fetch(gifUrl)
     .then(function (response) {
       response.json()
         .then(function (data) {
-          //pull the gif url from the data and append to the content section
-          linkToGif = data.data[0].url
-          let link = document.createElement("p")
-          document.querySelector("#content").appendChild(link)
-          link.innerText = linkToGif
+          //pull the url from the data and set to img src attribute
+          console.log(data[0])
+          let img = document.querySelector("#img")
+          img.setAttribute("src", data[0])
         })
     })
 }
@@ -66,6 +38,14 @@ var getFact = function () {
 };
 
 getFact();
+
+//test area for second function clicking h1
+let h1 = document.querySelector("h1")
+h1.addEventListener("click", function () {
+  console.log("yo")
+  let img = document.querySelector("#img")
+  img.setAttribute("src", linkToGif)
+})
 
 var recentSearches = [];
 
