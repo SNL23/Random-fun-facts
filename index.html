@@ -17,55 +17,60 @@
     </header>
     <div class="container">
       <div class="columns is-vcentered ex-maxheight">
-        <section class="column is-one-quarter">
+        <section class="column is-one-third">
           <div class="notification is-info is-light ex-bigbox">
             <h2 class="block title">Fact of the Day</h2>
             <p class="block">
-              Enter what kind of image you would like to accompany your fact of
-              the day
+              Select what kind of animal you would like to accompany your fact
+              of the day!
             </p>
-            <form id="daily-button" class="block">
-              <input
-                class="input"
-                type="text"
-                id="daily-input"
-                placeholder="Search for an Image"
-              />
-              <button class="button is-info is-fullwidth">
-                Get the Fact of the Day
-              </button>
+            <form id="daily-button">
+              <div class="field has-addons">
+                <select class="select is-medium is-fullwidth" id="daily-input">
+                  <option value="shibes">Dogs</option>
+                  <option value="cats">Cats</option>
+                  <option value="birds">Birds</option>
+                </select>
+                <button class="button is-medium is-info">
+                  Get the Fact of the Day!
+                </button>
+              </div>
             </form>
           </div>
         </section>
 
-        <section class="column is-one-half">
+        <section class="column is-one-third">
           <div class="notification is-link is-light ex-bigbox">
-            <h2 class="block title">Random (but useless) Facts!</h2>
+            <h2 class="block title">Random Facts!</h2>
             <p class="block">
-              Enter what kind of image you would like with your random fact
+              Get a random fact and choose what kind of animal you would like to
+              accompany it!
             </p>
             <form id="search-button">
-              <input
-                class="input"
-                type="text"
-                id="search-input"
-                placeholder="Search for an Image"
-              />
-              <button class="button is-link is-fullwidth">
-                Get your random fact!
-              </button>
+              <div class="field has-addons">
+                <select class="select is-medium is-fullwidth" id="search-input">
+                  <option value="shibes">Dogs</option>
+                  <option value="cats">Cats</option>
+                  <option value="birds">Birds</option>
+                </select>
+                <button class="button is-medium is-link">
+                  Get your random fact!
+                </button>
+              </div>
             </form>
           </div>
         </section>
 
-        <section class="column is-one-quarter">
+        <section class="column is-one-third">
           <div class="notification is-primary is-light ex-bigbox">
             <h2 class="block title">Surprise Me!</h2>
             <p class="block">
-              Not sure what kind of image you would like? Let RNG decide for
-              you!
+              Not sure what animal you would like? Let RNG decide for you!
             </p>
-            <button id="random-button" class="button is-primary is-fullwidth">
+            <button
+              id="random-button"
+              class="button is-primary is-medium is-fullwidth"
+            >
               Surprise!
             </button>
           </div>

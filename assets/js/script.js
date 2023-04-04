@@ -27,12 +27,11 @@ function dailyFact(event) {
 function surpriseFact(event) {
   event.preventDefault();
 
-  var randomInput = randomWords[Math.floor(randomWords.length * Math.random())];
+  var animals = ["shibes", "cats", "birds"];
 
-  console.log(randomInput);
+  var randomInput = animals[Math.floor(animals.length * Math.random())];
 
-  var updatedURL = baseURL + "?q=surprise&daily=false";
-  // var updatedURL = baseURL + "?q=" + randomInput + "&daily=false";
+  var updatedURL = baseURL + "?q=" + randomInput + "&daily=false";
 
   location.assign(updatedURL);
 }
@@ -40,32 +39,3 @@ function surpriseFact(event) {
 factBtn.on("submit", getFact);
 dailyBtn.on("submit", dailyFact);
 randomBtn.on("click", surpriseFact);
-
-var randomWords = [
-  "Apple",
-  "Book",
-  "Candy",
-  "Dolphin",
-  "Echo",
-  "Fireworks",
-  "Golf",
-  "Hotel",
-  "Igloo",
-  "Juliett",
-  "Kite",
-  "Language",
-  "Mountain",
-  "Number",
-  "Orange",
-  "Parasol",
-  "Question",
-  "Romeo",
-  "Salad",
-  "Table",
-  "Uniform",
-  "Victory",
-  "Water",
-  "X-ray",
-  "Yummy",
-  "Zebra",
-];
