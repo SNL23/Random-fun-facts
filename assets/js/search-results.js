@@ -8,15 +8,11 @@ let dogUrl = ""
 
 // function sends a fetch request to get the gif image and display the link
 const getImg = function (event) {
-
-  // if (event.target) {
-
-  // }
   // gets user query from url and builds the api parameters for the shibe api
-
-  // let queryString = document.location.href
-  // queryString = queryString.split("=")[1]  //get q value from url
-  dogUrl = urlPt1 + "cats" + urlPt2
+  let queryString = document.location.href
+  queryString = queryString.split("=")[1].split("&")[0]  //get q value from url
+  console.log(queryString)
+  dogUrl = urlPt1 + queryString + urlPt2
   //fetch request using the api url assembled above
   fetch(dogUrl)
     .then(function (response) {
