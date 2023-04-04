@@ -10,11 +10,26 @@
   </head>
 
   <body>
-    <header id="header" class="card">
-      <div class="card-header-title is-centered">
-        <h1 class="title is-1">Get a new fact of the day</h1>
-      </header>
-    </div>
+    <header id="header" class="card columns">
+      <div class="column is-one-fifth">
+        <h1 class="subtitle">Get a new fact of the day</h1>
+      </div>
+      <div class="column is-four-fifths">
+        <form id="search-button">
+          <div class="field has-addons">
+            <input
+              class="input"
+              type="text"
+              id="search-input"
+              placeholder="Search for an Image"
+            />
+            <div>
+              <button class="button is-link">Get another random fact!</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </header>
     <div class="columns">
       <section id="sidebar" class="column is-one-fifth block">
         <div class="box ex-bigbox">
@@ -31,11 +46,7 @@
   </body>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <!-- Compressed Foundation JavaScript -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
-    crossorigin="anonymous"
-  ></script>
-  <script src="./assets/js/brent.js"></script>
   <script src="./assets/js/search-results.js"></script>
+  <script src="./assets/js/chris.js"></script>
+  <script src="./assets/js/brent.js"></script>
 </html>
