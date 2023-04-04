@@ -7,5 +7,18 @@
   height: 50vh;
 }
 
-.ex-flex-container {
+.ex-flex-container {}
+
+
+img {
+  height: 18vw;
+  width: 15vw;
+}
+
+
+@media (max-width: 1000px) {
+  img {
+    height: 30vw;
+    width: 25vw
+  }
 }
