@@ -2,7 +2,7 @@ var testUrl = "https://uselessfacts.jsph.pl/api/v2/facts/random";
 
 var factText = $("#fact");
 
-let urlPt1 = "http://shibe.online/api/"
+let urlPt1 = "https://shibe.online/api/"
 let urlPt2 = "?count=1&urls=true&httpsUrls=true"
 let dogUrl = ""
 
@@ -60,3 +60,20 @@ function init() {
 }
 
 console.log(recentSearches);
+
+// To enable the use of the search bar at the top of the
+var factBtn = $("#search-button");
+
+var baseURL = "./search-results.html";
+
+function getNewFact(event) {
+  event.preventDefault();
+  var searchInputVal = $("#search-input").val();
+
+  if (!searchInputVal) return;
+
+  var updatedURL = baseURL + "?q=" + searchInputVal + "&daily=false";
+  location.assign(updatedURL);
+}
+
+factBtn.on("submit", getNewFact);

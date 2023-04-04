@@ -13,15 +13,19 @@
 <body>
   <header id="header" class="card columns">
     <div class="column is-one-fifth">
-      <h1 class="subtitle">Get a new fact of the day</h1>
+      <h1 class="title">Get a new fact of the day</h1>
     </div>
     <div class="column is-four-fifths">
       <form id="search-button">
         <div class="field has-addons">
-          <input class="input" type="text" id="search-input" placeholder="Search for an Image" />
-          <div>
-            <button class="button is-link">Get another random fact!</button>
-          </div>
+          <select class="select is-medium is-fullwidth" id="search-input">
+            <option value="shibes">Dogs</option>
+            <option value="cats">Cats</option>
+            <option value="birds">Birds</option>
+          </select>
+          <button class="button is-medium is-link">
+            Get your random fact!
+          </button>
         </div>
       </form>
     </div>
