@@ -8,6 +8,8 @@ let dogUrl = ""
 let animalType = ""
 
 var recentSearches = [];
+var factInfo = ""
+var imgInfo = "";
 
 init();
 
@@ -20,7 +22,7 @@ var getFact = function () {
   fetch(factUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
-        factText.text(data.text);
+        factInfo = data.text;
       });
     }
   });
@@ -41,8 +43,7 @@ const getImg = function () {
       response.json()
         .then(function (data) {
           //pull the url from the data and set to img src attribute
-          let img = document.querySelector("#img")
-          img.setAttribute("src", data[0])
+          imgInfo = data[0];
           storeData()
         })
     })
