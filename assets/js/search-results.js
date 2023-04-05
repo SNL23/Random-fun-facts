@@ -1,17 +1,39 @@
-var testUrl = "https://uselessfacts.jsph.pl/api/v2/facts/random";
+var factUrl = "https://uselessfacts.jsph.pl/api/v2/facts/random";
 
 var factText = $("#fact");
 
 let urlPt1 = "https://shibe.online/api/"
 let urlPt2 = "?count=1&urls=true&httpsUrls=true"
 let dogUrl = ""
+let animalType = ""
+
+var recentSearches = [];
+
+init();
+
+function init() {
+  var storedSearches = JSON.parse(localStorage.getItem("recentSearches"));
+  if(storedSearches) recentSearches = storedSearches;
+}
+
+var getFact = function () {
+  fetch(factUrl).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        factText.text(data.text);
+      });
+    }
+  });
+  getImg()
+};
 
 // function sends a fetch request to get the gif image and display the link
-const getImg = function (event) {
+const getImg = function () {
   // gets user query from url and builds the api parameters for the shibe api
-  let queryString = document.location.href
+  let queryString = document.location.href;
+
   queryString = queryString.split("=")[1].split("&")[0]  //get q value from url
-  console.log(queryString)
+  animalType = queryString;
   dogUrl = urlPt1 + queryString + urlPt2
   //fetch request using the api url assembled above
   fetch(dogUrl)
@@ -19,47 +41,26 @@ const getImg = function (event) {
       response.json()
         .then(function (data) {
           //pull the url from the data and set to img src attribute
-          console.log(data[0])
           let img = document.querySelector("#img")
           img.setAttribute("src", data[0])
+          storeData()
         })
     })
 }
 
-var getFact = function () {
-  fetch(testUrl).then(function (response) {
-    if (response.ok) {
-      console.log(response);
-      response.json().then(function (data) {
-        factText.text(data.text);
-      });
-    }
-  });
-  getImg(event)
-};
+
 
 getFact();
 
-var recentSearches = [];
 
 function renderSearches() {
-  for (var i = 0; i < recentSearches.length; i++) {
+  for (var i = recentSearches.length - 1; i >=0  ; i--) {
     var recentSearch = recentSearches[i];
-    var li = document.createElement("li");
-    li.textContent = recentSearch;
-    li.setAttribute("data-index", i);
+    $("#search-list").append("<li class = \"menu-item\"><a>" + recentSearch.animal + "</a></li>");
 
-    search - list.appendChild(li);
   }
 }
 
-function init() {
-  var storedSearches = JSon.parse(localStorage.getItem("recentSearches"));
-
-  renderSearches();
-}
-
-console.log(recentSearches);
 
 // To enable the use of the search bar at the top of the
 var factBtn = $("#search-button");
