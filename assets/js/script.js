@@ -9,8 +9,7 @@ const sec2 = document.querySelector('#sec2')
 const sec3 = document.querySelector('#sec3')
 const medium = window.matchMedia('(min-width: 1300px)');
 
-//Applies responsiveness through addition of classes when screen size passes the threshold
-// looks for match of screen size min width and calls function when it crosses threshold
+//Applies responsiveness through addition of classes when screen size passes the threshold. Looks for match of screen size min width and calls function when it crosses threshold
 medium.addEventListener('change', screenHandler);
 //sets class attributes of index page elements to make them responsive with Bulma Css
 function screenHandler(event) {
