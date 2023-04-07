@@ -63,6 +63,11 @@ var getFact = function () {
         factInfo = data.text;
       });
     }
+    else {
+      console.log("Error in randomfacts api response")
+      console.log("Status: " + response.status)
+      console.log("Ok? " + response.ok)
+    }
   });
 };
 
