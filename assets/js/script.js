@@ -16,7 +16,7 @@ medium.addEventListener('change', screenHandler);
 function screenHandler(event) {
   //when page grows passed 1300px, apply these classes
   if (event.matches) {
-    contain.setAttribute("class", "columns is-desktop ex-maxheight")
+    contain.setAttribute("class", "container")
     cols.setAttribute("class", "columns is-desktop is-vcentered ex-maxheight")
     sec1.setAttribute("class", "column is-4-desktop")
     sec2.setAttribute("class", "column is-4-desktop")
