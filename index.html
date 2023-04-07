@@ -1,83 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Fun Facts</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/bulma.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Random Fun Facts</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/bulma.css" />
-</head>
+  <body>
+    <header class="card">
+      <div class="card-header-title is-centered">
+        <h1 class="title is-1">Random Fun Facts</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div id="cols" class="columns is-desktop is-vcentered ex-maxheight">
+        <section id="sec1" class="column is-4-desktop">
+          <div class="notification is-info is-light ex-bigbox">
+            <h2 class="block title">Fact of the Day</h2>
+            <p class="block">
+              Select what kind of animal you would like to accompany your fact
+              of the day!
+            </p>
+            <form id="daily-button">
+              <div class="field has-addons">
+                <select
+                  class="select is-medium is-fullwidth mr-3"
+                  id="daily-input"
+                >
+                  <option value="shibes">Dogs</option>
+                  <option value="cats">Cats</option>
+                  <option value="birds">Birds</option>
+                </select>
+                <button class="button is-medium is-info">
+                  Get the Fact of the Day!
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
 
-<body>
-  <header class="card">
-    <div class="card-header-title is-centered">
-      <h1 class="title is-1">Random Fun Facts</h1>
+        <section id="sec2" class="column is-4-desktop">
+          <div class="notification is-link is-light ex-bigbox">
+            <h2 class="block title">Random Facts!</h2>
+            <p class="block">
+              Get a random fact and choose what kind of animal you would like to
+              accompany it!
+            </p>
+            <form id="search-button">
+              <div class="field has-addons">
+                <select
+                  class="select is-medium is-fullwidth mr-3"
+                  id="search-input"
+                >
+                  <option value="shibes">Dogs</option>
+                  <option value="cats">Cats</option>
+                  <option value="birds">Birds</option>
+                </select>
+                <button class="button is-medium is-link">
+                  Get your random fact!
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section id="sec3" class="column is-4-desktop">
+          <div class="notification is-primary is-light ex-bigbox">
+            <h2 class="block title">Surprise Me!</h2>
+            <p class="block">
+              Not sure what animal you would like? Let RNG decide for you!
+            </p>
+            <button
+              id="random-button"
+              class="button is-primary is-medium is-fullwidth"
+            >
+              Surprise!
+            </button>
+          </div>
+        </section>
+      </div>
     </div>
-  </header>
-  <div class="container">
-    <div id="cols" class="columns is-desktop is-vcentered ex-maxheight">
-      <section id="sec1" class="column is-4-desktop">
-        <div class="notification is-info is-light ex-bigbox">
-          <h2 class="block title">Fact of the Day</h2>
-          <p class="block">
-            Select what kind of animal you would like to accompany your fact
-            of the day!
-          </p>
-          <form id="daily-button">
-            <div class="field has-addons">
-              <select class="select is-medium is-fullwidth mr-3" id="daily-input">
-                <option value="shibes">Dogs</option>
-                <option value="cats">Cats</option>
-                <option value="birds">Birds</option>
-              </select>
-              <button class="button is-medium is-info">
-                Get the Fact of the Day!
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
+  </body>
 
-      <section id="sec2" class="column is-4-desktop">
-        <div class="notification is-link is-light ex-bigbox">
-          <h2 class="block title">Random Facts!</h2>
-          <p class="block">
-            Get a random fact and choose what kind of animal you would like to
-            accompany it!
-          </p>
-          <form id="search-button">
-            <div class="field has-addons">
-              <select class="select is-medium is-fullwidth mr-3" id="search-input">
-                <option value="shibes">Dogs</option>
-                <option value="cats">Cats</option>
-                <option value="birds">Birds</option>
-              </select>
-              <button class="button is-medium is-link">
-                Get your random fact!
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <section id="sec3" class="column is-4-desktop">
-        <div class="notification is-primary is-light ex-bigbox">
-          <h2 class="block title">Surprise Me!</h2>
-          <p class="block">
-            Not sure what animal you would like? Let RNG decide for you!
-          </p>
-          <button id="random-button" class="button is-primary is-medium is-fullwidth">
-            Surprise!
-          </button>
-        </div>
-      </section>
-    </div>
-  </div>
-</body>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="./assets/js/script.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./assets/js/script.js"></script>
 </html>

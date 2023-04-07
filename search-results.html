@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Fun Facts</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/bulma.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Random Fun Facts</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/bulma.css" />
-</head>
-
-<body>
-  <header id="header" class="card columns">
-    <div class="column ">
-      <h1 class="title mt-2 ml-3" id="search-title"> <a href="index.html" class="has-text-black">Get a new fact of the
-          day</a>
-      </h1>
-    </div>
-    <div id="form" class="column mt-1 is-flex is-justify-content-flex-end">
-      <form id="search-button">
-        <div class="field has-addons">
-          <select class="select is-medium is-fullwidth mr-3" id="search-input">
-            <option value="shibes">Dogs</option>
-            <option value="cats">Cats</option>
-            <option value="birds">Birds</option>
-          </select>
-          <button class="button is-medium is-link ">
-            Get your random fact!
-          </button>
-        </div>
-      </form>
-    </div>
-  </header>
-
-  <div class="columns">
-    <section id="sidebar" class="column is-one-fifth block mb-0">
-      <div class="menu box ex-bigbox">
-        <h3 class="menu-label title is-4">Search Results</h3>
-        <ul id="search-list" class="menu-list is-active"></ul>
+  <body>
+    <header id="header" class="card columns">
+      <div class="column">
+        <h1 class="title mt-2 ml-3" id="search-title">
+          <a href="index.html" class="has-text-black"
+            >Get a new fact of the day</a
+          >
+        </h1>
       </div>
-    </section>
-
-    <main class="column is-four-fifths block">
-      <div id="content" class="box ex-bigbox">
-        <div id="image-container " class="is-flex is-justify-content-center">
-          <img id="img" src="" alt="" class="" />
-        </div>
-        <p id="fact" class="has-text-centered"></p>
+      <div id="form" class="column mt-1 is-flex is-justify-content-flex-end">
+        <form id="search-button">
+          <div class="field has-addons">
+            <select
+              class="select is-medium is-fullwidth mr-3"
+              id="search-input"
+            >
+              <option value="shibes">Dogs</option>
+              <option value="cats">Cats</option>
+              <option value="birds">Birds</option>
+            </select>
+            <button class="button is-medium is-link">
+              Get your random fact!
+            </button>
+          </div>
+        </form>
       </div>
-    </main>
-  </div>
-</body>
+    </header>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="./assets/js/search-results.js"></script>
-<script src="./assets/js/chris.js"></script>
-<script src="./assets/js/brent.js"></script>
+    <div class="columns">
+      <section id="sidebar" class="column is-one-fifth block mb-0">
+        <div class="menu box ex-bigbox">
+          <h3 class="menu-label title is-4">Search Results</h3>
+          <ul id="search-list" class="menu-list"></ul>
+        </div>
+      </section>
 
+      <main class="column is-four-fifths block">
+        <div id="content" class="box ex-bigbox">
+          <div
+            id="image-container "
+            class="is-flex is-justify-content-center block"
+          >
+            <img id="img" src="" alt="" class="" />
+          </div>
+          <p id="fact" class="has-text-centered content"></p>
+          <div class="container is-fluid">
+            <button id="copyImage" class="button is-info is-light is-fullwidth">
+              <p>Copy the image link to the keyboard</p>
+              <img
+                class="icon"
+                src="./assets/images/content-save.svg"
+                alt="save icon"
+              />
+            </button>
+            <button id="copyFact" class="button is-link is-light is-fullwidth">
+              <p>Copy the fact to the clipboard</p>
+              <img
+                class="icon"
+                src="./assets/images/content-save.svg"
+                alt="save icon"
+              />
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./assets/js/search-results.js"></script>
 </html>
